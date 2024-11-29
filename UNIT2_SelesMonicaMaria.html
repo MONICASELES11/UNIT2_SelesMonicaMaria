@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resurse de calcul</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#4b0082;
+            color: #f8f8ff; //culoare text
+        }
+
+        header {
+                        background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #a76bcf  ;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: #004080;
+            margin-top: 0;
+        }
+
+                table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #0073cf;
+            color: #120a8f;
+        }
+
+     
+        #slideshow {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 2px solid #ccc;
+        }
+        #slideshow img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        #slideshow img.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Monica-Maria SELES</h1>
+    </header>
+
+    <main>
+        
+              <p><strong> selesmonica09@gmail.com</strong> </p>
+               
+        <section id="structura-retea">
+            <h2>Structura rețelei personale si accesul la internet</h2>
+            <img src="D:\Users\Monica\Downloads\999999.JPG" alt="Diagrama rețelei personale">
+        </section>
+
+        <section id="caracteristici-conexiune">
+            <h2>Caracteristici conexiune la rețea</h2>
+            <ul>
+                <li><strong>  Physical Address: D4-3D-7E-46-5A-20</strong> </li>
+               <li><strong> Debit la download: 0 Kbps  </strong> </li>
+              <li><strong> Debit la upload: 0 Kbps</strong> </li>
+            </ul>
+        </section>
+
+   
+     <section id="slideshow-section">
+            <h2>Utilizarea resurselor (slideshow)</h2>
+            <div id="slideshow">
+                <img src="consum_cpu.jpeg" alt="Monitorizare resursă 1" class="active">
+                <img src="memorie.jpg" alt="Monitorizare resursă 2">
+                <img src="disk.JPG" alt="Monitorizare resursă 3">
+            </div>
+        </section>
+
+
+        <section id="componente-hardware">
+            <h2>Specificatii tehnice ale statiei principale de lucru</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Denumire</th>
+                        <th>Producător</th>
+                        <th>Parametri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+	Procesor: Intel Core i5-3470 
+                   </td>
+                        <td>Intel</td>
+                        <td>4 nuclee, frecvență de bază este 3.20 GHz, Cache L1:256 KB,Cache L2:1.0 MB, Cache L3:6.0 MB, Tehnologie: 22 nm, Arhitectură: Ivy Bridge</td>
+                    </tr>
+                    <tr>
+                        <td>Memorie RAM</td>
+                        <td> MaxVoltage</td>
+                        <td>Capacitate RAM:16.0 GB</td>
+                    </tr>
+                       <tr>
+                        <td>Placă grafică (GPU):NVIDIA Quadro K620</td>
+                        <td>NVIDIA</td>
+                        <td>Memorie:10168MB</td>
+                    </tr>
+                    <!-- Adaugă alte componente -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+   <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll("#slideshow img");
+
+            setInterval(() => {
+                slides[currentSlide].classList.remove("active");
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add("active");
+            }, 3000);
+        });
+    </script>
+  
+</body>
+</html>
